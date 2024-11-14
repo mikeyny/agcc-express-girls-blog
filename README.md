@@ -12,8 +12,8 @@ Make sure you have Node.js and npm installed on your machine. You can download t
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/blog-app.git
-   cd blog-app
+   git clone https://github.com/mikeyny/agcc-express-girls-blog.git
+   cd agcc-express-girls-blog
    ```
 
 2. Install the dependencies:
