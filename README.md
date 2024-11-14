@@ -21,11 +21,6 @@ Make sure you have Node.js and npm installed on your machine. You can download t
    npm install
    ```
 
-3. Set up the database:
-   ```bash
-   npx sequelize-cli db:migrate
-   ```
-
 ### Running the Application
 
 To start the application, run:
