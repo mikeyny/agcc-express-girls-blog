@@ -1,0 +1,33 @@
+<div class="space-y-6">
+    <h1 class="text-3xl font-bold">Blog Posts</h1>
+    
+    {{#each posts}}
+    <article class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-2">
+            <a href="/posts/{{this.id}}" class="text-blue-600 hover:text-blue-800">
+                {{this.title}}
+            </a>
+        </h2>
+        <p class="text-gray-600 mb-4">Posted by {{this.User.username}} on {{formatDate this.createdAt}}</p>
+        <p class="text-gray-800">{{truncate this.content 200}}</p>
+        
+        {{#if (isOwner ../user.id this.UserId)}}
+        <div class="mt-4 space-x-2">
+            <a href="/posts/{{this.id}}/edit" 
+               class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                Edit
+            </a>
+            <form action="/posts/{{this.id}}/delete" method="POST" class="inline-block">
+                <button type="submit" 
+                        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                        onclick="return confirm('Are you sure you want to delete this post?')">
+                    Delete
+                </button>
+            </form>
+        </div>
+        {{/if}}
+    </article>
+    {{else}}
+    <p class="text-gray-600">No posts found.</p>
+    {{/each}}
+</div> 

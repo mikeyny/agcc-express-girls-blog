@@ -1,0 +1,16 @@
+<nav class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="text-xl font-bold">Blog App</a>
+        <div class="space-x-4">
+            {{#if user}}
+                <a href="/posts" class="hover:text-blue-200">Posts</a>
+                <a href="/posts/create" class="hover:text-blue-200">Create Post</a>
+                <a href="/logout" class="hover:text-blue-200">Logout</a>
+                <span class="text-blue-200">Welcome, {{user.username}}</span>
+            {{else}}
+                <a href="/login" class="hover:text-blue-200">Login</a>
+                <a href="/signup" class="hover:text-blue-200">Sign Up</a>
+            {{/if}}
+        </div>
+    </div>
+</nav> 
